@@ -16,7 +16,7 @@ public class TestFileReader {
 		this.path = path;
 	}
 
-	public void readRows(int rowN) {
+	public void readRows(int rowN) throws IOException {
 		try { 
 			File f = new File(path);
 			BufferedReader br = new BufferedReader(new FileReader(f));
@@ -32,7 +32,8 @@ public class TestFileReader {
 			br.close();
 
 		} catch (IOException e) {
-		    System.out.println(e);
+			e.printStackTrace();
+		    throw e;
 	  }	
 	}
 	
